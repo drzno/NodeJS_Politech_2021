@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="/main.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</head>
+<body class="d-flex flex-column h-100">
+{{> header}}
+<div class="container">
+    <p></p>
+    <a href="http://localhost:3000/weather/Zhytomyr" class="btn btn-primary">Житомир</a>
+    <a href="http://localhost:3000/weather/Kyiv" class="btn btn-primary">Киев</a>
+        <a href="http://localhost:3000/weather/Poltava" class="btn btn-primary">Полтава</a>
+            <a href="http://localhost:3000/weather/Sumy" class="btn btn-primary">Сумы</a>
+    <p></p>
+    <h2 class="mt-5 cc_cursor">{{weather.city}}</h2>
+    <figure>
+        <img src="http://openweathermap.org/img/w/{{weather.icon}}.png" alt="Image">
+    </figure>
+    <p class="lead cc_cursor">Описание: {{weather.description}}</p>
+    <p class="lead cc_cursor">Температура: {{weather.temperature}}°F</p>
+    <p class="lead cc_cursor">Давление: {{weather.pressure}}</p>
+    <p class="lead cc_cursor">Влажность: {{weather.humidity}}</p>
+</div>
+{{> footer}}
+</body>
+</html>
